@@ -1,0 +1,173 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	background-color: rgb(44, 41, 38);
+}
+
+a {
+	text-decoration: none;
+}
+
+#main-header {
+	height: 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgb(29, 26, 24);
+	padding: 0 3%;
+}
+
+#main-header #logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: rgb(238, 164, 80);
+}
+
+.menu-btn {
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	display: none;
+}
+
+.menu-btn span {
+	width: 100%;
+	height: 3px;
+	background-color: white;
+}
+
+#main-header ul {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+#main-header li {
+	margin: 0 1rem;
+}
+
+#main-header nav a {
+	color: rgb(238, 164, 80);
+	font-size: 1rem;
+}
+
+#main-header nav a:hover {
+	color: rgb(238, 163, 44);
+	font-size: 1.25rem;
+}
+
+#side-drawer {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(29, 26, 27);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+#side-drawer:target {
+	display: block;
+}
+
+#side-drawer header {
+	height: 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0 3%;
+}
+
+#side-drawer ul{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	padding: 10rem;
+}
+
+#side-drawer li{
+	margin: 1.5rem;
+}
+
+#side-drawer a{
+	font-size: 2.5rem;
+	color: rgb(253, 239, 213);
+}
+
+main h1 {
+	text-align: center;
+	color: rgb(238, 164, 88);
+	font-size: 3rem;
+}
+
+#latest-products {
+	width: 80%;
+	margin: 2rem auto;
+}
+
+#latest-products ul {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1rem 1rem;
+	margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+	background-color: rgb(228, 206, 182);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.item img{
+	height: 15rem;
+	width: 100%;
+	object-fit: cover;
+}
+
+.item-content {
+	text-align: center;
+	padding-bottom: 1rem;
+}
+
+.item h2 {
+	margin: 0 0 1rem 0;
+}
+
+.btn {
+	background-color: rgb(228, 157, 44);
+	color: white;
+	border-radius: 8px;
+	padding: .5rem 1.5rem;
+}
+
+.btn:hover {
+	background-color: rgb(221, 31, 34);
+}
+
+@media (max-width: 49rem) {
+	#main-header nav {
+		display: none;
+	}
+	.menu-btn {
+    display: flex;
+  }
+	main h1 {
+		font-size: 2.5rem;
+	}
+	#latest-products ul {
+		grid-template-columns: 100%;
+	}	
+}
+
+@media (min-width: 49rem) {
+	#latest-products ul {
+		grid-template-columns: 1fr 1fr;
+	}	
+}

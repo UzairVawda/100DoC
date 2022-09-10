@@ -1,0 +1,104 @@
+body {
+	--color-black: rgb(42, 38, 33);
+	--color-pink: rgb(253, 218, 212);
+	--color-burnt-orange: rgb(211, 107, 88);
+	--color-blue: rgb(221, 235, 246);
+	--color-dark-blue: rgb(3, 53, 92);
+	color: var(--color-black);
+	background-color: var(--color-pink);
+	font-family: 'Poppins', sans-serif;
+}
+
+header {
+	margin: 2rem;
+	text-align: center;
+	color: var(--color-black);
+}
+
+main {
+	width: 800px;
+	margin: auto;
+}
+
+form {
+	width: 100%;
+	border-radius: 8px;
+	background-color: var(--color-blue);
+	border: solid 1px var(--color-dark-blue);
+	padding: 1rem;
+	box-shadow: 1 2px 8px rgba(0,0,0,0.2);
+}
+
+section {
+	margin-bottom: 1rem;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.25rem;
+}
+
+input, textarea, select {
+	width: 100%;
+	display: block;
+	margin-bottom: 1.1rem;
+	box-sizing: border-box;
+	font: inherit;
+	border: 1px solid var(--color-burnt-orange);
+	padding: 0.25rem;
+	color: var(--color-burnt-orange);
+	border-radius: 5px;
+} 
+
+textarea {
+	resize: vertical;
+}
+
+input:focus, textarea:focus {
+	background-color: var(--color-pink);
+	border-color:  var(--color-pink);
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#buttonGroup {
+	display: flex;
+	justify-content: flex-end;
+}
+
+button {
+	display: block;
+	font: inherit;
+	color: var(--color-white);
+	background-color: var(--color-pink);
+	border: var(--color-pink);
+	padding: 0.5rem 1.5rem;
+	border-radius: 8px;
+	cursor: pointer;
+	margin: .2rem;
+}
+
+button:hover {
+	background-color:  var(--color-burnt-orange);
+	border: solid 1px  var(--color-burnt-orange);
+}
+
+.group {
+	display: block
+}
+
+.group {
+	display: flex;
+}
+
+.group label {
+	margin: 0;
+}
+
+.group input {
+	width: auto;
+}

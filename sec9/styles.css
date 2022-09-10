@@ -1,0 +1,104 @@
+html {
+	--color-grey-100: rgb(236, 236, 236);
+	--color-grey-300: rgb(134, 134, 134);;
+	--color-grey-500: rgb(58, 58, 58);
+	--color-grey-700: rgb(41, 41, 41);
+
+	--color-blue-300: rgb(167, 226, 255);
+	--color-blue-700: rgb(0, 170, 255);
+	
+	--size-5: 50px;
+
+	background-color: var(--color-grey-100);
+  font-family: 'Krub', sans-serif;
+  font-weight: 400;
+}
+
+.card-container {
+	background-color: rgb(255, 255, 255);
+	width: 350px;
+	margin: var(--size-5) auto;
+	box-shadow: 3px 3px 10px rgb(201, 200, 200);
+	transition: transform 1s ease;
+}
+
+.card-container:hover {
+	transform: scale(1.05);
+}
+
+h1 {
+	color: var(--color-grey-500);
+  padding: 30px var(--size-5) 0px var(--size-5);
+  margin: 10px 0;
+	text-align: left;
+	font-family: 'Zilla Slab', serif;
+  font-weight: 600;
+}
+
+.card-info {
+	color: var(--color-grey-300);
+  text-align: left;
+  padding: 0 var(--size-5);
+  margin: 10px 0 30px 0;
+}
+
+.price {
+  color: var(--color-grey-700);
+  background-color: var(--color-blue-700);
+  text-align: center;
+  margin: 30px auto 10px auto;
+  font-size: var(--size-5);
+  font-weight: 600;
+}
+
+.price-info {
+  color: var(--color-grey-300);
+  text-align: center;
+  margin: 10px 0 30px 0;
+  padding: 0 var(--size-5);
+}
+
+.sub-details {
+  width: 300px;
+  margin: 30px var(--size-5);
+}
+
+.sub-feature {
+  display: flex;
+}
+
+.icon {
+  display: flex;
+  width: 15px;
+}
+
+.sub-feature-text {
+  color: var(--color-grey-300);
+  padding: 2px;
+  margin: 5px;   
+}
+
+.button-container {
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+
+.button {
+  color: var(--color-blue-700);
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 70%;
+  padding: 10px;
+  margin: 0 0 30px 0;
+  border: 2px solid rgb(224, 224, 224);
+  font-size: 18px;
+  font-weight: 600; 
+	transition: background-color .5s ease;
+}
+
+.button:hover {
+  color: black;
+  background-color: var(--color-blue-700);
+  border: 2px solid rgb(255, 255, 255);
+}

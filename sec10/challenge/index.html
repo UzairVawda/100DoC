@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Contact Us</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/secTen/challenge/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Contact Us</h1>
+    </header>
+    <main>
+      <form action="/" method="get">
+        <section>
+          <h2>How can we help you?</h2>
+          <ul>
+            <li>
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                name="fullName"
+                id="fullName"
+                placeholder="John Doe"
+                required
+              />
+            </li>
+            <li>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="johndoe@gmail.com"
+                required
+              />
+            </li>
+            <li>
+              <label for="phoneNumber">Phone Number</label>
+              <input
+                type="tel"
+                id="phoneNumber"
+                name="phoneNumber"
+                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                required
+              />
+            </li>
+            <li>
+              <label for="message">Your Message</label>
+              <textarea
+                name="message"
+                id="message"
+                clis="30"
+                rows="5"
+								required
+              ></textarea>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <label for="how">How did you find us?</label>
+          <select name="how" id="how" required>
+            <option value="-">-</option>
+            <option value="facebook">Facebook</option>
+            <option value="instagra">Instagram</option>
+            <option value="friend">Friend / Family</option>
+            <option value="no">You didn't</option>
+            <option value="other">Other</option>
+          </select>
+        </section>
+        <section>
+          <h2>How should we reply?</h2>
+          <ul>
+            <li class="group">
+              <input type="radio" name="reply" id="callRes" value="phoneRes" required />
+              <label for="callRes">Phone Call</label>
+            </li>
+            <li class="group">
+              <input type="radio" name="reply" id="emailRes" value="emailRes" required />
+              <label for="emailRes">Email</label>
+            </li>
+            <li class="group">
+              <input type="radio" name="reply" id="dontRes" value="dontRes" required />
+              <label for="dontRes">Dont</label>
+            </li>
+          </ul>
+        </section>
+        <section class="group">
+          <input type="checkbox" name="terms" id="terms" required/>
+          <label for="terms">Accept Terms</label>
+        </section>
+        <section id="buttonGroup">
+          <button type="reset">CLEAR</button>
+          <button type="submit">SUBMIT</button>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>

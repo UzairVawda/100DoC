@@ -1,0 +1,66 @@
+#activeGame {
+	display: none;
+	text-align: center;
+	margin: 2rem auto;
+}
+
+#winnerArc {
+	width: 90%;
+	max-width: 40rem;
+	margin: auto;
+	padding: 1rem 2rem;
+	background-color: var(--color-dark-brown);
+	color: var(--color-light-grey);
+	box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+	border-radius: 4px;
+	display: none;
+}
+
+#winnerArc h2 {
+	font-size: 2.5rem;
+	margin: 0.5rem 0;
+}
+
+#activePlayerName {
+	font-weight: bold;
+	color: var(--color-dark-brown);
+}
+
+#grid {
+	list-style: none;
+	margin: 1rem 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: 6rem 6rem 6rem;
+	grid-template-rows: 6rem 6rem 6rem;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+#grid li{
+	background-color: var(--color-dark-brown);
+	border-radius: 4px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	font-size: 5rem;
+	font-weight: bold;
+	color: var(--color-light-grey);
+}
+
+#grid li:hover { 
+	background-color: var(--color-light-brown);
+	border: 1px solid var(--color-dark-brown);
+	color: var(--color-light-grey);
+}
+
+#grid li.disabled {
+	color: var(--color-light-grey);
+	background-color: var(--color-dark-brown);
+	cursor: default;
+}
+
+/* #grid li.disabled:hover {
+	color: var(--color-light-grey);
+} */

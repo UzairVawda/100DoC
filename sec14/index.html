@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>TIC TAC TOE</title>
+		<meta name="Tic Tac Toe" content="Tic Tac Toe">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="/sec14/styles/style.css">
+		<link rel="stylesheet" href="/sec14/styles/modal.css">
+		<link rel="stylesheet" href="/sec14/styles/configuration.css">
+		<link rel="stylesheet" href="/sec14/styles/game.css">
+	</head>
+	<body>
+		<div id="backdrop"></div>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<header>
+			<h1>Play Tic, Tac, Toe</h1>
+			<p>Built with HTMl, CSS, JavaScript</p>
+			<p>- UV</p>
+		</header>
+
+		<main>
+			<aside class="modal" id="gameConfig">
+				<h2>Choose Your Name</h2>
+				<form>
+					<div>
+						<label for="playerName"></label>
+						<input type="text" name="playerName" id="playerName" required>
+					</div>
+					<p id="errorMsg">Please Enter A Valid Name!</p>
+					<div>
+						<button type="reset" class="btn btnAlt" id="closeBtn">Cancel</button>
+						<button type="submit" class="btn" id="confirmBtn">Confrim</button>
+					</div>
+				</form>
+			</aside>
+
+			<section id="playerListing">
+				<ol>
+					<li class="player">
+						<article>
+							<h2>Player 1</h2>
+							<h3 id="playerOneName">PLAYER NAME</h3>
+							<p class="playerSymbol">X</p>
+							<button class="btn" id="playerOneEdit" data-playerid="1" >Edit</button>
+						</article>
+					</li>
+					<li class="player">
+						<h2>Player 2</h2>
+						<h3 id="playerTwoName">PLAYER NAME</h3>
+						<p class="playerSymbol">O</p>
+						<button class="btn" id="playerTwoEdit" data-playerid="2">Edit</button>
+					</li>
+				</ol>
+				<button class="btn" id="newGame">Start New Game</button>
+			</section>
+
+			<section id="activeGame">
+				<article id="winnerArc">
+					<h2 id="winnerLine"></h2>
+				</article>
+				<p>Its your turn <span id="activePlayerName">PLAYERNAME!</span></p>
+				<ol id="grid">
+					<li data-col="1" data-row="1"></li>
+					<li data-col="2" data-row="1"></li>
+					<li data-col="3" data-row="1"></li>
+					
+					<li data-col="1" data-row="2"></li>
+					<li data-col="2" data-row="2"></li>
+					<li data-col="3" data-row="2"></li>
+
+					<li data-col="1" data-row="3"></li>
+					<li data-col="2" data-row="3"></li>
+					<li data-col="3" data-row="3"></li>
+				</ol>
+			</section>
+		</main>
+		<script src="/sec14/scripts/configuration.js"></script>
+		<script src="/sec14/scripts/game.js"></script>
+		<script src="/sec14/scripts/app.js"></script>
+	</body>
+</html>

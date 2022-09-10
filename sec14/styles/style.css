@@ -1,0 +1,50 @@
+body {
+	--color-black: rgb(01,00,01);
+	--color-dark-brown: rgb(43,05,04);
+	--color-medium-brown: rgb(135,64,0);
+	--color-light-brown: rgb(253,225,196);
+	--color-light-grey: rgb(234, 224, 213);
+	background-color: var(--color-light-brown);
+	color: var(--color-black);
+	font-family: 'Inconsolata', monospace;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: var(--color-dark-brown);
+	color: var(--color-light-grey);
+	padding: 2rem 10%;
+	text-align: center;
+}
+
+.btn {
+	font: inherit;
+	padding: 0.5rem 1.5rem;
+	background-color: var(--color-dark-brown);
+	border: 1px solid var(--color-dark-brown);
+	color: var(--color-light-grey);
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: var(--color-light-brown);
+	border: 1px solid var(--color-dark-brown);
+	color: var(--color-black);
+}
+
+.btnAlt {
+	background-color: transparent;
+	color: var(--color-dark-brown);
+}
+
+.btnAlt:hover {
+	background-color: var(--color-dark-brown);
+	border: 1px solid var(--color-dark-brown);
+	color: var(--color-light-grey);
+}
+
+main {
+	padding-top: 1rem;
+}

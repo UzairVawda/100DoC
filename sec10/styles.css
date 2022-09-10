@@ -1,0 +1,78 @@
+body {
+	--color-white: rgb(232, 223, 223);
+	--color-grey: rgb(157, 149, 149);
+	--color-dark-purple: rgb(50, 5, 102);
+	--color-light-purple: rgb(219, 190, 253);
+	background-color: var(--color-dark-purple);
+	font-family: 'Aboreto', cursive;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+form {
+	width: 50rem;
+	margin: 10rem auto;
+	background-color:  var(--color-white);
+	padding: 1rem;
+	border-radius: 8px;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.25rem;
+}
+
+input, textarea, select {
+	width: 100%;
+	display: block;
+	margin-bottom: 1rem;
+	box-sizing: border-box;
+	font: inherit;
+	border: 1px solid var(--color-grey);
+	padding: 0.25rem;
+	color: var(--color-dark-purple);
+}
+
+textarea {
+	resize: vertical;
+}
+
+input:focus, textarea:focus {
+	background-color: var(--color-light-purple);
+	border-color:  var(--color-light-purple);
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	display: block;
+	font: inherit;
+	background-color:  var(--color-dark-purple);
+	color: var(--color-white);
+	border: solid 1px  var(--color-dark-purple);
+	padding: 0.5rem 1.5rem;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: var(--color-light-purple);
+	border: var(--color-light-purple);
+}
+
+
+.groupItem {
+	display: flex;
+}
+
+.groupItem input{
+	width: auto;
+	margin-right: .5rem;
+}

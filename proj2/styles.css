@@ -1,0 +1,82 @@
+body {
+  background-color: rgb(244, 234, 255);
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  padding: 32px;
+  text-align: center;
+}
+
+header h1 {
+	font-size: 52px;
+  color: rgb(88, 49, 196);
+}
+
+img {
+	width: 300px;
+}
+
+main {
+	background-color: rgb(122, 74, 180);
+  border-radius: 8px;
+  padding: 32px;
+  width: 700px;
+  margin: 32px auto;
+  color: white;
+}
+
+main h2 {
+	font-size: 25px;
+}
+
+ul {
+	list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+	padding-left: 10px;
+  margin: 14px 0;
+	border-left: 5px solid transparent;
+}
+
+.highlighted-item {
+	color: rgb(255, 237, 177);
+  border-color: rgb(255, 237, 177);
+}
+
+a {
+	background-color: rgb(255, 237, 177);
+  color: rgb(36, 3, 102);
+  border-radius: 5px;
+  padding: 2px 6px;
+  text-decoration: none;
+}
+a:hover, a:active {
+	background-color: rgb(255, 186, 58);
+}
+
+footer {
+	margin-top: 25px;
+	text-align: center;
+}
+
+footer a {
+	background-color: rgb(250, 201, 39);
+  text-decoration: none;
+  padding: 12px 20px;
+  display: inline-block;
+  color: rgb(66, 51, 4);
+  border-radius: 4px;
+}
+
+footer a:hover, footer a:active {
+	background-color: rgb();
+}
+
+footer p {
+  color: rgb(131, 113, 149);
+	margin-top: 30px;
+}

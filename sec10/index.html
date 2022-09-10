@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap"
+      rel="stylesheet"
+    />
+    <title>FORM's</title>
+    <link rel="stylesheet" href="/secTen/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>test</h1>
+    </header>
+    <main>
+      <form action="/secTen/" method="GET">
+        <section>
+          <h2>Your personal details</h2>
+          <ul>
+            <li>
+              <label for="userName">Full Name</label>
+              <input type="text" name="userName" id="userName" required placeholder="John Doe"/>
+            </li>
+            <li>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" required/>
+            </li>
+            <li>
+              <label for="password">Password</label>
+              <input type="password" name="password" id="password" required minlength="7"/>
+            </li>
+          </ul>
+        </section>
+        <hr />
+
+        <section>
+					<h2>Details</h2>
+          <ul>
+            <li>
+              <label for="age">Age</label>
+              <input type="number" name="age" id="age" step="0.5" required min="18" max="100"/>
+            </li>
+            <li>
+              <label for="birthdate">Birthdate</label>
+              <input type="date" name="birthdate" id="birthdate" required  min="1921-01-01" max="2022-08-29"/>
+            </li>
+            <li>
+              <label for="car">Cars</label>
+              <select name="car" id="car" required>
+                <option value="-">-</option>
+                <option value="BMW">BMW</option>
+                <option value="BENZ">Benz</option>
+                <option value="HONDA">Honda</option>
+              </select>
+            </li>
+          </ul>
+        </section>
+        <hr />
+
+        <section>
+          <label for="message">Your Message</label>
+          <textarea name="message" id="message" cols="30" rows="5"></textarea>
+        </section>
+
+        <section>
+          <h2>Verification Method</h2>
+          <ul>
+            <li class="groupItem">
+              <input
+                type="radio"
+                name="verificationMethod"
+                id="textMessage"
+                value="text"
+								required
+              />
+              <label for="textMessage">Text Message</label>
+            </li>
+            <li class="groupItem">
+              <input
+                type="radio"
+                name="verificationMethod"
+                id="email"
+                value="email"
+								required
+              />
+              <label for="Email">Email</label>
+            </li>
+            <li class="groupItem">
+              <input
+                type="radio"
+                name="verificationMethod"
+                id="phoneCall"
+                value="call"
+								required
+              />
+              <label for="phoneCall">Phone Call</label>
+            </li>
+          </ul>
+        </section>
+        <hr />
+        <section>
+          <h2>Contact Me</h2>
+          <ul>
+            <li class="groupItem">
+              <input
+                type="checkbox"
+                name="textContact"
+                id="textContact"
+                value="text"
+								required
+              />
+              <label for="textMessage">Contact me via Text Message</label>
+            </li>
+            <li class="groupItem">
+              <input
+                type="checkbox"
+                name="emailContact"
+                id="emailContact"
+                value="email"
+								required
+              />
+              <label for="textMessage">Contact me via Email</label>
+            </li>
+            <li class="groupItem">
+              <input
+                type="checkbox"
+                name="phoneContact"
+                id="phoneContact"
+                value="phone"
+								required
+              />
+              <label for="textMessage">Contact me via Phone</label>
+            </li>
+          </ul>
+        </section>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+#gameConfig {
+	text-align: center;
+}
+#gameConfig h2  {
+	margin: 1rem 0;
+}
+
+#gameConfig div {
+	margin: 1rem 0;
+}
+
+#gameConfig div label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-weight: bold;
+}
+
+#gameConfig div input {
+	font: inherit;
+	border: 2px solid rgb(204, 204, 204);
+	width: 15rem;
+	padding: 0.5rem;
+}
+
+#playerListing {
+	width: 90%;
+	max-width: 40rem;
+	margin: 3rem auto;
+	text-align: center;
+}
+
+#playerListing ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+#playerListing ol li{
+	margin: 1rem;
+	padding: 1rem;
+	width: 50%;
+	background-color: var(--color-light-grey);
+	border-radius: 4px;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+
+#playerListing h2 {
+	font-size: 1rem;
+	margin: 0.5rem 0;
+}
+
+#playerListing h3 {
+	font-size: 1.5rem;
+	margin: 0.5rem 0;
+	color: var(--color-dark-brown);
+}
+
+.playerSymbol {
+	font-size: 5rem;
+	margin: 0.5rem 0;
+	font-weight: bold;
+	color: var(--color-dark-brown);
+}

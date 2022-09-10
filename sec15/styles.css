@@ -1,0 +1,49 @@
+section {
+	margin: 1rem auto;
+}
+
+#carouselSlide {
+	width: 100%;
+	max-width: 50rem;
+	height: 30rem;
+}
+
+#carouselSlide img {
+	height: 30rem;
+  object-fit: cover;
+}
+
+h2 {
+	padding: 0;
+	margin: 0;
+}
+
+#cardSection {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0 5%; 
+}
+
+.card {
+	width: 100%;
+	max-width: 25rem;
+}
+
+@media only screen and (max-width: 800px) {
+	#cardSection {
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+	.card {
+		width: 100%;
+		max-width: 40rem;
+	}
+} 
+
+form {
+	width: 100%;
+	max-width: 30rem;
+	margin: 1rem auto;
+}
