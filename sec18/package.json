@@ -1,0 +1,26 @@
+{
+  "name": "sec18",
+  "version": "1.0.0",
+  "description": "Express Pratice",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UzairVawda/100DoC.git"
+  },
+  "keywords": [
+    "NA"
+  ],
+  "author": "Uzair Vawda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UzairVawda/100DoC/issues"
+  },
+  "homepage": "https://github.com/UzairVawda/100DoC#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
