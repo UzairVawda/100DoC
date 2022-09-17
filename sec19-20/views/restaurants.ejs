@@ -17,6 +17,11 @@
             <h1>Recommended restaurants</h1>
             <p>Find your next favorite restaurants with help of our other users!</p>
             <p>We found  <%= numberofRes %> </p>
+            <p><%= nextOrder %> </p>
+            <form action="/restaurants" method="GET">
+              <input type="hidden" value="<%= nextOrder %>" name="order">
+              <button class="btn">Change Order </button>
+            </form>
             <% for(const restaurant of data) { %>
               
               <%- include('includes/resItem', {restaurant: restaurant}) %>
