@@ -64,15 +64,28 @@
 
 // // // // // // try / catch
 
-const fs = require('fs');
-function readFile() {
-	try {
-		const data = fs.readFileSync('data.json')
-	} catch (error){
-		console.log('ERROR')
-		console.log(error)
-	}
-	console.log('hello')
-};
+// const fs = require('fs');
+// function readFile() {
+// 	try {
+// 		const data = fs.readFileSync('data.json')
+// 	} catch (error){
+// 		console.log('ERROR')
+// 		console.log(error)
+// 	}
+// 	console.log('hello')
+// };
 
-readFile();
+// readFile();
+
+// // // // // // destructuring objects and arrays
+// const names = ['Uzair V', 'Max K', 'Dawn M']
+// const [ one, two ] = names;
+// console.log(one, two, names)
+
+// const job = {
+// 	title: 'Dev',
+// 	location: 'ny',
+// 	salary: 85000
+// }
+// const { title: jtitle } = job
+// console.log(jtitle)
