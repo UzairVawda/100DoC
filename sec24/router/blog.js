@@ -44,7 +44,6 @@ router.get("/posts/edit/:id", async function(req, res, next) {
 	if (!singlePost || singlePost.length == 0) {
 		return res.status(404).redirect('404')
 	}
-	console.log(singlePost)
 	res.status(200).render("updatePost", { post: singlePost[0], authors: authors });
 });
 
