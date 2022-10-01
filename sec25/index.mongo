@@ -1,0 +1,102 @@
+use resRatingTool
+show dbs
+
+db.restaurants.insertOne({name:"Burger King", address: { street: "someStreet", state: 'NY', zipcode: 11111} })
+{
+  acknowledged: true,
+  insertedId: ObjectId("633888d8c7ee96054bac3611")
+}
+
+resRatingTool> db.restaurants.insertOne({name:"Wendys", address: { street: "anotherStreet", state: 'KY', zipcode: 12345} })
+{
+  acknowledged: true,
+  insertedId: ObjectId("63388914c7ee96054bac3612")
+}
+
+resRatingTool> db.restaurants.find()
+[
+  {
+    _id: ObjectId("633888d8c7ee96054bac3611"),
+    name: 'Burger King',
+    address: { street: 'someStreet', state: 'NY', zipcode: 11111 }
+  },
+  {
+    _id: ObjectId("63388914c7ee96054bac3612"),
+    name: 'Wendys',
+    address: { street: 'anotherStreet', state: 'KY', zipcode: 12345 }
+  }
+]
+
+resRatingTool> db.restaurants.find({name: "Burger King"})
+[
+  {
+    _id: ObjectId("633888d8c7ee96054bac3611"),
+    name: 'Burger King',
+    address: { street: 'someStreet', state: 'NY', zipcode: 11111 }
+  }
+]
+
+resRatingTool> db.restaurants.find({}, {name: 1})
+[
+  { _id: ObjectId("633888d8c7ee96054bac3611"), name: 'Burger King' },
+  { _id: ObjectId("63388914c7ee96054bac3612"), name: 'Wendys' }
+]
+
+resRatingTool> db.restaurants.find({}, {name: 1})
+[
+  { _id: ObjectId("633888d8c7ee96054bac3611"), name: 'Burger King' },
+  { _id: ObjectId("63388914c7ee96054bac3612"), name: 'Wendys' }
+]
+
+resRatingTool> db.restaurants.find({}, {name: 1, _id: 0})
+[ { name: 'Burger King' }, { name: 'Wendys' } ]
+
+resRatingTool> db.restaurants.updateOne({ _id: ObjectId("633888d8c7ee96054bac3611")}, {$set: {name: "Burger Queen"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+resRatingTool> db.restaurants.find({}, {name: 1, _id: 0})
+[ { name: 'Burger Queen' }, { name: 'Wendys' } ]
+
+resRatingTool> db.restaurants.deleteOne({_id: ObjectId("633888d8c7ee96054bac3611")})
+{ acknowledged: true, deletedCount: 1 }
+
+resRatingTool> db.restaurants.find({}, {name: 1, _id: 0})
+[ { name: 'Wendys' } ]
+
+
+resRatingTool> db.restaurants.updateOne({_id:ObjectId("63388ef5c7ee96054bac3618")}, {$set:{"address.street": "A NEW STREET"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+resRatingTool> db.restaurants.find()
+[
+  {
+    _id: ObjectId("63388ea0c7ee96054bac3616"),
+    name: 'Curry House',
+    address: { street: 'Random Street', state: 'NY', zipCode: 11103 },
+    type: { typeID: ObjectId("63388ddec7ee96054bac3613"), name: 'Indian' }
+  },
+  {
+    _id: ObjectId("63388ed2c7ee96054bac3617"),
+    name: 'Burger House',
+    address: { street: 'SAINT Street', state: 'KY', zipCode: 14303 },
+    type: { typeID: ObjectId("63388ddec7ee96054bac3614"), name: 'American' }
+  },
+  {
+    _id: ObjectId("63388ef5c7ee96054bac3618"),
+    name: 'Pasta House',
+    address: { street: 'A NEW STREET', state: 'CT', zipCode: 74303 },
+    type: { typeID: ObjectId("63388ddec7ee96054bac3615"), name: 'Italian' }
+  }
+]
+resRatingTool>
