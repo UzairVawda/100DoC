@@ -8,7 +8,12 @@ router.get("/", function (req, res) {
 });
 
 router.get("/posts", async function (req, res) {
-  const posts = await db.getDB().collection("posts").find({}).toArray();
+  const posts = await db
+    .getDB()
+    .collection("posts")
+    .find({})
+    .project({ title: 1, summary: 1, "author.name": 1 })
+    .toArray();
   const postLen = posts.length;
   res.status(200).render("posts-list", { allPosts: posts, len: postLen });
 });
@@ -18,12 +23,18 @@ router.get("/posts/view/:id", async function (req, res) {
   const requestedPost = await db
     .getDB()
     .collection("posts")
-    .findOne({ _id: ObjectId(requestId) });
+    .findOne({ _id: new ObjectId(requestId) })
+    .project({ summary: 0 });
+
+  if (!requestedPost) {
+    return res.status(404).render('404')
+  }
+
   res.status(200).render("post-detail", { post: requestedPost });
 });
 
 router.get("/newPost", async function (req, res) {
-  const authors = await db.getDB().collection("authors").find({}).toArray();
+  const authors = await db.getDB().collection("authors").find({}).project({ name: 1 }).toArray();
   res.status(200).render("create-post", { allAuthors: authors });
 });
 
@@ -56,7 +67,10 @@ router.get("/posts/edit/:id", async function (req, res) {
   const requestedPost = await db
     .getDB()
     .collection("posts")
-    .findOne({ _id: new ObjectId(requestId) });
+    .findOne({ _id: new ObjectId(requestId) }, { title: 1, summary: 1, body: 1 });
+  if (!requestedPost) {
+    return res.status(404).render('404')
+  }
   res.status(200).render("update-post", { post: requestedPost });
 });
 
@@ -68,10 +82,14 @@ router.post("/posts/edit/:id", async function (req, res) {
     .updateOne(
       { _id: new ObjectId(requestId) },
       {
-        $set: { title: req.body.title, summary: req.body.summary, body: req.body.content },
+        $set: {
+          title: req.body.title,
+          summary: req.body.summary,
+          body: req.body.content,
+        },
       }
     );
-  res.redirect(`/posts/view/${requestId}`)
+  res.redirect(`/posts/view/${requestId}`);
 });
 
 router.post("/posts/delete/:id", async function (req, res) {
