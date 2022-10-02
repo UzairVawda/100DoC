@@ -11,20 +11,24 @@ router.get("/posts", async function (req, res) {
   const posts = await db
     .getDB()
     .collection("posts")
-    .find({})
-    .project({ title: 1, summary: 1, "author.name": 1 })
+    .find({}, { title: 1, summary: 1, "author.name": 1 })
     .toArray();
   const postLen = posts.length;
   res.status(200).render("posts-list", { allPosts: posts, len: postLen });
 });
 
-router.get("/posts/view/:id", async function (req, res) {
-  const requestId = req.params.id;
+router.get("/posts/view/:id", async function (req, res, next) {
+  let requestId = req.params.id;
+  try {
+    requestId = new ObjectId(requestId)
+  } catch (error) {
+    next(error);
+  }
+
   const requestedPost = await db
     .getDB()
     .collection("posts")
-    .findOne({ _id: new ObjectId(requestId) })
-    .project({ summary: 0 });
+    .findOne({ _id: requestId }, { summary: 0 });
 
   if (!requestedPost) {
     return res.status(404).render('404')
@@ -34,7 +38,7 @@ router.get("/posts/view/:id", async function (req, res) {
 });
 
 router.get("/newPost", async function (req, res) {
-  const authors = await db.getDB().collection("authors").find({}).project({ name: 1 }).toArray();
+  const authors = await db.getDB().collection("authors").find({}, { name: 1 }).toArray();
   res.status(200).render("create-post", { allAuthors: authors });
 });
 
@@ -62,12 +66,19 @@ router.post("/newPost/create", async function (req, res) {
   res.redirect("/posts");
 });
 
-router.get("/posts/edit/:id", async function (req, res) {
-  const requestId = req.params.id;
+router.get("/posts/edit/:id", async function (req, res, next) {
+  let requestId = req.params.id;
+
+  try {
+    requestId = new ObjectId(requestId)
+  } catch (error) { 
+    next(error);
+  }
+
   const requestedPost = await db
     .getDB()
     .collection("posts")
-    .findOne({ _id: new ObjectId(requestId) }, { title: 1, summary: 1, body: 1 });
+    .findOne({ _id: requestId }, { title: 1, summary: 1, body: 1 });
   if (!requestedPost) {
     return res.status(404).render('404')
   }
@@ -75,12 +86,18 @@ router.get("/posts/edit/:id", async function (req, res) {
 });
 
 router.post("/posts/edit/:id", async function (req, res) {
-  const requestId = req.params.id;
+  let requestId = req.params.id;
+
+  try {
+    requestId = new ObjectId(requestId)
+  } catch (error) { 
+    next(error);
+  }
   await db
     .getDB()
     .collection("posts")
     .updateOne(
-      { _id: new ObjectId(requestId) },
+      { _id: requestId },
       {
         $set: {
           title: req.body.title,
