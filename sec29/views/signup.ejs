@@ -6,19 +6,22 @@
 <body>
   <%- include('includes/header.ejs') %>
   <main id="signup">
+    <% if (tempData.hasError) { %>
+     <p id="input-error"><%= tempData.message %> </p>
+    <% } %>
     <h1>Signup</h1>
     <form action="/signup" method="POST">
       <div class="form-control">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" value="<%= tempData.email %>" required>
       </div>
       <div class="form-control">
         <label for="confirm-email">Confirm Email</label>
-        <input type="email" id="confirm-email" name="confirm-email" required>
+        <input type="email" id="confirm-email" name="confirm-email" value="<%= tempData.confirmEmail %>" required>
       </div>
       <div class="form-control">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" value="<%= tempData.password %>" required>
       </div>
       <button class="btn">Create user</button>
     </form>
