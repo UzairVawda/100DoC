@@ -37,6 +37,25 @@ router.get("/login", function (req, res) {
   res.render("login", { tempData: sessionInputData });
 });
 
+router.get("/admin", async function (req, res) {
+  if (!res.locals.isAuth) {
+    return res.status(401).render("401");
+  }
+
+  if (!res.locals.isAdmin) {
+    return res.status(403).render("403");
+  }
+  res.render("admin");
+});
+
+router.get("/profile", function (req, res) {
+  if (!res.locals.isAuth) {
+    return res.status(401).render("401");
+  }
+
+  res.render("profile");
+});
+
 router.post("/signup", async function (req, res) {
   const enteredEmail = req.body.email;
   const enteredConfirmEmail = req.body["confirm-email"];
@@ -136,25 +155,6 @@ router.post("/login", async function (req, res) {
   req.session.save(function () {
     res.redirect("/admin");
   });
-});
-
-router.get("/admin", async function (req, res) {
-  if (!req.session.isAuthenticated) {
-    return res.status(401).render("401");
-  }
-  const user = await db.getDb().collection('users').findOne({_id: req.session.user.id})
-  if (!user || !user.isAdmin) {
-    return res.status(403).render("403");
-  }
-  res.render("admin");
-});
-
-router.get("/profile", function (req, res) {
-  if (!req.session.isAuthenticated) {
-    return res.status(401).render("401");
-  }
-
-  res.render("profile");
 });
 
 router.post("/logout", function (req, res) {
