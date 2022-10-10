@@ -3,6 +3,10 @@ const User = require("../models/user");
 const validateSession = require("../util/validation-session");
 const validateForm = require("../util/validation-form");
 
+function getNotAuth(req, res) {
+  res.status(401).render("401");
+}
+
 function getHome(req, res) {
   sessionInputData = validateSession.getSessionErrorData(req, {
     email: "",
@@ -126,6 +130,7 @@ function userLogout(req, res) {
 }
 
 module.exports = {
+	getNotAuth: getNotAuth, 
   getHome: getHome,
   getLogin: getLogin,
   userSignup: userSignup,

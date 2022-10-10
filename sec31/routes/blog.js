@@ -1,11 +1,12 @@
 const express = require('express');
-const mongodb = require('mongodb');
-
+const routerGuard = require('../middlewares/router-middle');
 const blogControllers = require('../controllers/post-controllers');
 
 const router = express.Router();
 
 router.get('/', blogControllers.getHome);
+
+router.use(routerGuard)
 
 router.get('/admin', blogControllers.getAdmin);
 

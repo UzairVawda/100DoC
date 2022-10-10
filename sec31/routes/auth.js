@@ -4,6 +4,8 @@ const authControllers = require('../controllers/auth-controllers');
 const router = express.Router();
 
 
+router.get('/401', authControllers.getNotAuth);
+
 router.get('/signup', authControllers.getHome);
 
 router.get('/login', authControllers.getLogin);
