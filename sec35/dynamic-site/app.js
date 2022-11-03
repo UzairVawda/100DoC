@@ -1,5 +1,5 @@
+let PORTTOUSE = 6969;
 const path = require('path');
-
 const express = require('express');
 
 const db = require('./data/database');
@@ -19,9 +19,13 @@ app.use(function(error, req, res, next) {
   res.status(500).render('500');
 })
 
+if (process.env.PORT) {
+  PORTTOUSE = process.env.PORT;
+}
+
 db.initDatabase()
   .then(function () {
-    app.listen(3000);
+    app.listen(PORTTOUSE);
   })
   .catch(function (error) {
     console.log('Connecting to the database failed!');
