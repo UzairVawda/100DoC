@@ -4,12 +4,12 @@ const MongoClient = mongodb.MongoClient;
 
 let database;
 
-async function initDb() {
-  const client = await MongoClient.connect('mongodb://localhost:27017');
-  database = client.db('second-api');
+async function initDB() {
+  const client = await MongoClient.connect('mongodb://127.0.0.1:27017');
+  database = client.db('todoAPI');
 }
 
-function getDb() {
+function getDB() {
   if (!database) {
     throw new Error('Database not connected!');
   }
@@ -18,6 +18,6 @@ function getDb() {
 }
 
 module.exports = {
-  initDb: initDb,
-  getDb: getDb
+  initDB: initDB,
+  getDB: getDB
 };
