@@ -1,6 +1,6 @@
-const mongodb = require('mongodb');
+const mongodb = require("mongodb");
 
-const db = require('../data/database');
+const db = require("../data/database");
 
 class Todo {
   constructor(text, id) {
@@ -9,7 +9,7 @@ class Todo {
   }
 
   static async getAllTodos() {
-    const todoDocuments = await db.getDB().collection('todos').find().toArray();
+    const todoDocuments = await db.getDB().collection("todos").find().toArray();
 
     return todoDocuments.map(function (todoDocument) {
       return new Todo(todoDocument.text, todoDocument._id);
@@ -19,10 +19,10 @@ class Todo {
   save() {
     if (this.id) {
       const todoId = new mongodb.ObjectId(this.id);
-      console.log(todoId)
+
       return db
         .getDB()
-        .collection('todos')
+        .collection("todos")
         .updateOne(
           { _id: todoId },
           {
@@ -30,17 +30,17 @@ class Todo {
           }
         );
     } else {
-      return db.getDB().collection('todos').insertOne({ text: this.text });
+      return db.getDB().collection("todos").insertOne({ text: this.text });
     }
   }
 
   delete() {
     if (!this.id) {
-      throw new Error('Trying to delete todo without id!');
+      throw new Error("Trying to delete todo without id!");
     }
     const todoId = new mongodb.ObjectId(this.id);
 
-    return db.getDB().collection('todos').deleteOne({ _id: todoId });
+    return db.getDB().collection("todos").deleteOne({ _id: todoId });
   }
 }
 

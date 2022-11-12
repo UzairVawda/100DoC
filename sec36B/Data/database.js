@@ -1,17 +1,17 @@
-const mongodb = require('mongodb');
+const mongodb = require("mongodb");
 
 const MongoClient = mongodb.MongoClient;
 
 let database;
 
 async function initDB() {
-  const client = await MongoClient.connect('mongodb://127.0.0.1:27017');
-  database = client.db('todoAPI');
+  const client = await MongoClient.connect("mongodb://127.0.0.1:27017");
+  database = client.db("todoAPI");
 }
 
 function getDB() {
   if (!database) {
-    throw new Error('Database not connected!');
+    throw new Error("Database not connected!");
   }
 
   return database;
@@ -19,5 +19,5 @@ function getDB() {
 
 module.exports = {
   initDB: initDB,
-  getDB: getDB
+  getDB: getDB,
 };
